@@ -1,13 +1,562 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Roboto:ital@1&display=swap');
+
+
+
+body{
+    font-family: 'Balsamiq Sans', cursive;
+    background-color:lightblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Header */
+
+.header{
+    width: 100%;
+    min-height: 10vh;
+    margin-bottom: 10px;
+    background-color: dodgerblue;
+    padding: 0.5rem;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
 }
+
+.header h1{
+    color: white;
+}
+
+.header p{
+    color: black;
+}
+
+.headerImg{
+    max-height: 8vh;
+    width: auto;
+}
+
+/* Card Componenet */
+
+.outer-holder{
+    width: 98%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.card-holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin: 0 10px;
+}
+
+.info-holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 300px;
+}
+
+
+.pokeDiv{
+    height: 42px;
+    width: 16rem;
+    margin-bottom: 2px;
+    background-color:white;
+    text-align: center;
+    text-transform: capitalize;
+    position: relative;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: url("./photos/circle-cropped.png") center center/cover;
+    border: none;
+    background-color:  white;
+    mix-blend-mode: multiply;
+    outline: none;
+    margin-top: 6px;
+    margin-right: 8px;
+    overflow: hidden;
+    display: block;
+}
+
+
+.button-holder{
+    max-width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.nav-btn{
+    height: 2.4rem;
+    width: 17rem;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: .2em;
+    margin-right: 4px;
+    outline: none;
+}
+
+.nav-btn:active{
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+
+
+
+@keyframes rotateBall {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+
+.pokeBtn:hover{
+    animation-name: rotateBall;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes slowOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(200px) scale(.4);
+    } 50%{
+
+        opacity: 0.1;
+        transform: scale(.8);
+        
+    }100%{
+        opacity: 1;
+        transform: translateY(0px), scale(1);
+    }
+}
+
+.PokemonInfo{
+    min-height: 10rem;
+    min-width: 18rem;
+    max-height: 450px;
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    background-color: white;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    margin: 5px;
+    overflow: visible;
+    flex-grow: 1;
+    box-shadow: 0px 2px 20px 20px rgba(17, 17, 17, 0.2);
+    animation: slowOpacity 400ms ease-in-out;
+
+}
+
+.PokemonInfo h4{
+    font-size: 28px;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+
+.PokemonInfo h6{
+    font-size: 19px;
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.pokeImage{
+    height: auto;
+    min-width: 100px;
+    margin: 0;
+}
+
+.deleteBtn{
+    position: absolute;
+    top: 0;
+    right: 0.6rem;
+    height: 10px;
+    width: 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: tomato;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* Seach-Bar */
+
+.search-form{
+    margin: 5px 10px;
+    
+}
+
+.search-form input,
+button{
+    height: 2rem;
+    border-radius: 3px;
+    margin:2px;
+}
+
+.search-form input{
+    min-width: 18rem;
+    border: 1px solid black;
+    outline: none;
+}
+.search-form button{
+    background-color: black;
+    color: white;
+    min-width: 6rem;
+    min-height: 2.1rem;
+    border: none;
+
+}
+
+.stats-container{
+    width: 100%;
+}
+
+.statsBtn{
+    width: 50%;
+    margin: 4px 0;
+    color: white;
+    border: none;
+    background-color: dodgerblue;
+    min-width: 8rem;
+    border: 1px solid rgba(14, 14, 14, 0.5);
+}
+
+.error-div{
+    margin-left: 20px;
+}
+
+.success{
+    color: darkblue;
+    
+
+}
+
+.error{
+    color: red;
+}
+
+.landing-section{
+    margin: 3rem .5rem;
+    
+}
+
+.landing-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    gap: 4rem;
+}
+
+.landing-container button{
+    width: fit-content;
+    color: white;
+    padding: 1rem;
+    background-color: dodgerblue;
+    font-size: clamp(.6rem, 1.7vw, 20px) ;
+    outline: none;
+    border: none;
+    line-height: 25%;
+    padding: 1.5rem 3.5rem;
+}
+
+/* Filter Sections */
+
+.filter-container{
+    margin: 5px 12px;
+    width: 24rem;
+   
+}
+
+.filter-container h4{
+    margin-bottom: 0;
+}
+
+.filter-buttons{
+    
+    border-radius: 2px;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1px;
+}
+
+
+.filter-buttons select{
+    outline: none;
+    background-color: white;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1.2px solid black;
+}
+
+.filter-submit{
+    margin-left: 2.5rem;
+}
+
+.filter-submit,
+.clear-filter{
+    border: 1.2px solid black;
+    outline: none;
+    padding: .1rem .3rem;
+}
+
+.filter-submit{
+    background-color: dodgerblue;
+    color: white;
+}
+
+.clear-filter{
+    background-color: tomato;
+    color: white;
+}
+
+.type-options{
+    background-color: white;
+    border-bottom: 1px solid black;
+    
+}
+
+@keyframes addNew {
+    0%{
+        opacity: 0;
+        background-color: white;
+
+    }50%{
+        background-color: palegreen;
+    }100%{
+        opacity: 1;
+        background-color: white;
+    }
+}
+
+.new{
+    animation-name: addNew;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+.total-stats{
+    color: rgb(77, 192, 31);
+}
+
+.height-weight p{
+    margin: 8px 0;
+    
+}
+
+
+.change-upper{
+    text-transform: capitalize;
+}
+
+
+.c{
+    text-transform: uppercase;
+}
+
+
+
+.blue{
+    color: dodgerblue;
+}
+
+.compare-poke{
+    background: transparent;
+    outline: none;
+    border: none;
+    color: rgb(77, 192, 31);
+    transition-duration: 200ms;
+}
+
+.compare-poke:hover{
+    transform: scale(1.1);
+}
+
+.compare-poke:active{
+    color: dodgerblue;
+}
+
+.comparison-container{
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 65vh;
+    border: none;
+    
+}
+
+.comparison-container h2{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 5px 0;
+    
+}
+
+.comparison-holder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+    max-width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    background-color: white;
+    position: relative;
+
+}
+
+.comparison-pokemon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: .4rem;
+    height: 100%;
+    max-width: 35%;
+    min-width: 25%;
+    font-size: clamp(.5rem, 1.7vw, 16px); 
+
+
+}
+
+.remove-comparison{
+    background: tomato;
+    color: white;
+    border: 2px solid tomato;
+    margin: 10px 0;
+}
+
+.pokemon-description{
+    font-size: clamp(.5rem, 1.7vw, 13px);
+    max-height: 90px;
+    overflow: scroll;
+    margin: 10px;
+}
+
+.evaluate{
+    
+    position: absolute;
+    right: 61%;
+    left: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: rgba(39, 36, 49, .95);
+    height: 100%;
+    width: 22%;
+    color: orange;
+    border-radius: 10%;
+    box-shadow: 5px 5px 20px 20px rgba(28, 25, 56, 0.4);
+    
+    
+}
+
+.evaluate p{
+    margin: 0;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(.5rem, 1.7vw, 16px)
+}
+
+.innerEvaluate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.evaluate h2{
+    text-transform: capitalize;
+    position: absolute;
+    top: 2rem;
+    font-size: 32px;
+}
+
+.make-green{
+    color: palegreen;
+}
+
+.make-red{
+    color: tomato
+}
+
+.closeModal{
+    background-color: rgba(14, 14, 14, 0.8);
+    border: none;
+    color: white;
+    position: absolute;
+    top: -8%;
+    right: 0;
+    height: 2.2rem;
+    width: 6rem;
+   
+}
+
+.comparing-box{
+    width: 60%;
+    height: 2.5rem;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    margin-left: 20%;
+    border-radius: 10px 10px 0 0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+.comparing-box p{
+    text-align: center;
+}
+
+
+
